@@ -1,0 +1,117 @@
+{
+  "verboseLogging": true,
+
+  "driver": {
+    "systemFilePath": "..\\..\\Drivers\\Memory\\inpoutx64.sys",
+    "serviceName": "inpoutx64",
+    "installIfMissing": true,
+    "unloadOnExit": true,
+
+    "mouseFilePath": "..\\..\\Drivers\\Mouse\\zhang-wei.sys",
+    "mouseServiceName": "zhang-wei",
+    "loadMouse": true
+  },
+
+  "target": {
+    "processName": "FortniteClient-Win64-Shipping.exe",
+    "rescanIntervalMs": 1000,
+    "excludeCommandLine": "-nullrhi"
+  },
+
+  "memory": {
+    "mappedPageLimit": 16384,
+    "translationCacheMs": 2000
+  },
+
+  "overlay": {
+    "menuKey": 45,
+    "pollRateHz": 240,
+    "entityRateHz": 90,
+    "cameraBack": 0.0,
+    "cameraUp": 0.0,
+    "cameraRight": 0.0,
+    "onlyWhenGameFocused": true,
+    "showFps": true
+  },
+
+  "aim": {
+    "enabled": false,
+    "key": 2,
+    "secondaryKey": 0,
+    "bone": 66,
+    "boneOffset": 0.0,
+    "fovPixels": 160.0,
+    "smoothing": 6.0,
+    "sensitivity": 1.0,
+    "maxDistanceMeters": 250.0,
+
+    "selection": 0,
+    "crosshairWeight": 0.7,
+
+    "lockTarget": true,
+    "dropOutsideFov": false,
+
+    "ignoreTeammates": true,
+    "ignoreDowned": false,
+
+    "showFov": true,
+    "showTarget": true,
+    "targetColor": [255, 217, 64, 230]
+  },
+
+  "esp": {
+    "enabled": true,
+    "box": true,
+    "boneDots": true,
+    "skeleton": true,
+    "distance": true,
+    "snapline": false,
+    "headMarker": true,
+    "ignoreTeammates": true,
+    "ignoreDowned": false,
+
+    "maxDistanceMeters": 500.0,
+    "boxThickness": 1.4,
+    "skeletonThickness": 1.2,
+    "boneDotRadius": 1.6,
+    "detailHeightPixels": 44.0,
+    "headMarkerScale": 0.5,
+
+    "colors": {
+      "enemy": [255, 61, 79, 255],
+      "team": [77, 199, 255, 255],
+      "downed": [158, 158, 158, 255],
+      "skeleton": [255, 255, 255, 199],
+      "text": [255, 255, 255, 255]
+    },
+
+    "skeletonPairs": [
+      [66, 64],
+      [64, 2],
+
+      [64, 9],
+      [9, 10],
+      [10, 11],
+
+      [64, 37],
+      [37, 38],
+      [38, 39],
+
+      [2, 67],
+      [67, 68],
+      [68, 82],
+
+      [2, 74],
+      [74, 75],
+      [75, 83]
+    ]
+  },
+
+  "offsetOverrides": {
+    "gWorld": 0,
+    "gObjects": 0,
+    "gNames": 0,
+    "componentToWorld": 0,
+    "componentSpaceTransforms": 0
+  }
+}

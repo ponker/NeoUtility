@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Core"><UniqueIdentifier>{1A000001-0000-0000-0000-000000000001}</UniqueIdentifier></Filter>
+    <Filter Include="Driver"><UniqueIdentifier>{1A000001-0000-0000-0000-000000000002}</UniqueIdentifier></Filter>
+    <Filter Include="Memory"><UniqueIdentifier>{1A000001-0000-0000-0000-000000000003}</UniqueIdentifier></Filter>
+    <Filter Include="Game"><UniqueIdentifier>{1A000001-0000-0000-0000-000000000004}</UniqueIdentifier></Filter>
+    <Filter Include="Render"><UniqueIdentifier>{1A000001-0000-0000-0000-000000000005}</UniqueIdentifier></Filter>
+    <Filter Include="Features"><UniqueIdentifier>{1A000001-0000-0000-0000-000000000006}</UniqueIdentifier></Filter>
+    <Filter Include="ThirdParty"><UniqueIdentifier>{1A000001-0000-0000-0000-000000000007}</UniqueIdentifier></Filter>
+    <Filter Include="Resources"><UniqueIdentifier>{1A000001-0000-0000-0000-000000000008}</UniqueIdentifier></Filter>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ResourceCompile Include="resources\NeoExternal.rc"><Filter>Resources</Filter></ResourceCompile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ClCompile Include="src\Core\Config.cpp"><Filter>Core</Filter></ClCompile>
+    <ClCompile Include="src\Core\Embedded.cpp"><Filter>Core</Filter></ClCompile>
+    <ClCompile Include="src\Core\Json.cpp"><Filter>Core</Filter></ClCompile>
+    <ClCompile Include="src\Core\Log.cpp"><Filter>Core</Filter></ClCompile>
+    <ClCompile Include="src\Driver\DriverLoader.cpp"><Filter>Driver</Filter></ClCompile>
+    <ClCompile Include="src\Driver\InpOutClient.cpp"><Filter>Driver</Filter></ClCompile>
+    <ClCompile Include="src\Memory\KernelResolver.cpp"><Filter>Memory</Filter></ClCompile>
+    <ClCompile Include="src\Memory\PageTable.cpp"><Filter>Memory</Filter></ClCompile>
+    <ClCompile Include="src\Memory\PhysicalMemory.cpp"><Filter>Memory</Filter></ClCompile>
+    <ClCompile Include="src\Memory\TargetProcess.cpp"><Filter>Memory</Filter></ClCompile>
+    <ClCompile Include="src\Game\Camera.cpp"><Filter>Game</Filter></ClCompile>
+    <ClCompile Include="src\Game\UnrealTypes.cpp"><Filter>Game</Filter></ClCompile>
+    <ClCompile Include="src\Game\WorldReader.cpp"><Filter>Game</Filter></ClCompile>
+    <ClCompile Include="src\Render\Overlay.cpp"><Filter>Render</Filter></ClCompile>
+    <ClCompile Include="src\Render\Renderer.cpp"><Filter>Render</Filter></ClCompile>
+    <ClCompile Include="src\Features\Esp.cpp"><Filter>Features</Filter></ClCompile>
+    <ClCompile Include="src\Features\Menu.cpp"><Filter>Features</Filter></ClCompile>
+    <ClCompile Include="..\ImGui\imgui.cpp"><Filter>ThirdParty</Filter></ClCompile>
+    <ClCompile Include="..\ImGui\imgui_draw.cpp"><Filter>ThirdParty</Filter></ClCompile>
+    <ClCompile Include="..\ImGui\imgui_tables.cpp"><Filter>ThirdParty</Filter></ClCompile>
+    <ClCompile Include="..\ImGui\imgui_widgets.cpp"><Filter>ThirdParty</Filter></ClCompile>
+    <ClCompile Include="..\ImGui\backends\imgui_impl_dx11.cpp"><Filter>ThirdParty</Filter></ClCompile>
+    <ClCompile Include="..\ImGui\backends\imgui_impl_win32.cpp"><Filter>ThirdParty</Filter></ClCompile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ClInclude Include="src\Core\Config.h"><Filter>Core</Filter></ClInclude>
+    <ClInclude Include="src\Core\Embedded.h"><Filter>Core</Filter></ClInclude>
+    <ClInclude Include="resources\resource.h"><Filter>Resources</Filter></ClInclude>
+    <ClInclude Include="src\Core\Json.h"><Filter>Core</Filter></ClInclude>
+    <ClInclude Include="src\Core\Log.h"><Filter>Core</Filter></ClInclude>
+    <ClInclude Include="src\Core\Types.h"><Filter>Core</Filter></ClInclude>
+    <ClInclude Include="src\Driver\DriverLoader.h"><Filter>Driver</Filter></ClInclude>
+    <ClInclude Include="src\Driver\InpOutClient.h"><Filter>Driver</Filter></ClInclude>
+    <ClInclude Include="src\Memory\KernelResolver.h"><Filter>Memory</Filter></ClInclude>
+    <ClInclude Include="src\Memory\PageTable.h"><Filter>Memory</Filter></ClInclude>
+    <ClInclude Include="src\Memory\PhysicalMemory.h"><Filter>Memory</Filter></ClInclude>
+    <ClInclude Include="src\Memory\TargetProcess.h"><Filter>Memory</Filter></ClInclude>
+    <ClInclude Include="src\Game\Camera.h"><Filter>Game</Filter></ClInclude>
+    <ClInclude Include="src\Game\Entity.h"><Filter>Game</Filter></ClInclude>
+    <ClInclude Include="src\Game\Offsets.h"><Filter>Game</Filter></ClInclude>
+    <ClInclude Include="src\Game\UnrealTypes.h"><Filter>Game</Filter></ClInclude>
+    <ClInclude Include="src\Game\WorldReader.h"><Filter>Game</Filter></ClInclude>
+    <ClInclude Include="src\Render\Overlay.h"><Filter>Render</Filter></ClInclude>
+    <ClInclude Include="src\Render\Renderer.h"><Filter>Render</Filter></ClInclude>
+    <ClInclude Include="src\Features\Esp.h"><Filter>Features</Filter></ClInclude>
+    <ClInclude Include="src\Features\Menu.h"><Filter>Features</Filter></ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{7C1F5B2A-9D34-4E61-8B77-2E4A6C0D51F3}</ProjectGuid>
+    <RootNamespace>NeoExternal</RootNamespace>
+    <WindowsTargetPlatformVersion>$(LatestTargetPlatformVersion)</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v145</PlatformToolset>
+    <UseDebugLibraries Condition="'$(Configuration)'=='Debug'">true</UseDebugLibraries>
+    <UseDebugLibraries Condition="'$(Configuration)'=='Release'">false</UseDebugLibraries>
+    <WholeProgramOptimization Condition="'$(Configuration)'=='Release'">true</WholeProgramOptimization>
+  </PropertyGroup>
+
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+
+  <PropertyGroup>
+    <OutDir>$(SolutionDir)..\Build\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Intermediate\$(Configuration)\</IntDir>
+    <TargetName>NeoExternal</TargetName>
+  </PropertyGroup>
+
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)src;$(SolutionDir)..\ImGui;$(SolutionDir)..\ImGui\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32_LEAN_AND_MEAN;NOMINMAX;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Optimization Condition="'$(Configuration)'=='Release'">MaxSpeed</Optimization>
+      <Optimization Condition="'$(Configuration)'=='Debug'">Disabled</Optimization>
+      <FunctionLevelLinking Condition="'$(Configuration)'=='Release'">true</FunctionLevelLinking>
+      <IntrinsicFunctions Condition="'$(Configuration)'=='Release'">true</IntrinsicFunctions>
+      <RuntimeLibrary Condition="'$(Configuration)'=='Release'">MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary Condition="'$(Configuration)'=='Debug'">MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+      <EnableCOMDATFolding Condition="'$(Configuration)'=='Release'">true</EnableCOMDATFolding>
+      <OptimizeReferences Condition="'$(Configuration)'=='Release'">true</OptimizeReferences>
+      <AdditionalDependencies>d3d11.lib;dxgi.lib;dcomp.lib;d3dcompiler.lib;advapi32.lib;user32.lib;gdi32.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Core\Config.cpp" />
+    <ClCompile Include="src\Core\Embedded.cpp" />
+    <ClCompile Include="src\Core\Json.cpp" />
+    <ClCompile Include="src\Core\Log.cpp" />
+    <ClCompile Include="src\Driver\DriverLoader.cpp" />
+    <ClCompile Include="src\Driver\Injector.cpp" />
+    <ClCompile Include="src\Game\CameraFeed.cpp" />
+    <ClCompile Include="src\Game\CanvasLocator.cpp" />
+    <ClCompile Include="src\Driver\InpOutClient.cpp" />
+    <ClCompile Include="src\Driver\MouseClient.cpp" />
+    <ClCompile Include="src\Features\Aimbot.cpp" />
+<ClCompile Include="src\Features\Esp.cpp" />
+    <ClCompile Include="src\Features\Menu.cpp" />
+    <ClCompile Include="src\Game\Camera.cpp" />
+    <ClCompile Include="src\Game\MatrixTap.cpp" />
+    <ClCompile Include="src\Game\UnrealTypes.cpp" />
+    <ClCompile Include="src\Game\WorldReader.cpp" />
+    <ClCompile Include="src\Memory\KernelResolver.cpp" />
+    <ClCompile Include="src\Memory\PageTable.cpp" />
+    <ClCompile Include="src\Memory\PhysicalMemory.cpp" />
+    <ClCompile Include="src\Memory\TargetProcess.cpp" />
+    <ClCompile Include="src\Render\Overlay.cpp" />
+    <ClCompile Include="src\Render\Renderer.cpp" />
+    <ClCompile Include="..\ImGui\imgui.cpp" />
+    <ClCompile Include="..\ImGui\imgui_draw.cpp" />
+    <ClCompile Include="..\ImGui\imgui_tables.cpp" />
+    <ClCompile Include="..\ImGui\imgui_widgets.cpp" />
+    <ClCompile Include="..\ImGui\backends\imgui_impl_dx11.cpp" />
+    <ClCompile Include="..\ImGui\backends\imgui_impl_win32.cpp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ClInclude Include="src\Core\Config.h" />
+    <ClInclude Include="src\Core\Embedded.h" />
+    <ClInclude Include="src\Core\Json.h" />
+    <ClInclude Include="resources\resource.h" />
+    <ClInclude Include="src\Core\Log.h" />
+    <ClInclude Include="src\Core\Types.h" />
+    <ClInclude Include="src\Driver\DriverLoader.h" />
+    <ClInclude Include="src\Driver\InpOutClient.h" />
+    <ClInclude Include="src\Driver\MouseClient.h" />
+    <ClInclude Include="src\Features\Aimbot.h" />
+<ClInclude Include="src\Features\Esp.h" />
+    <ClInclude Include="src\Features\Menu.h" />
+    <ClInclude Include="src\Game\BoneNames.h" />
+<ClInclude Include="src\Game\Camera.h" />
+    <ClInclude Include="src\Game\MatrixTap.h" />
+    <ClInclude Include="src\Game\Entity.h" />
+    <ClInclude Include="src\Game\Offsets.h" />
+    <ClInclude Include="src\Game\UnrealTypes.h" />
+    <ClInclude Include="src\Game\WorldReader.h" />
+    <ClInclude Include="src\Memory\KernelResolver.h" />
+    <ClInclude Include="src\Memory\PageTable.h" />
+    <ClInclude Include="src\Memory\PhysicalMemory.h" />
+    <ClInclude Include="src\Memory\TargetProcess.h" />
+    <ClInclude Include="src\Render\Overlay.h" />
+    <ClInclude Include="src\Render\Renderer.h" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ResourceCompile Include="resources\NeoExternal.rc" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="config.json" />
+  </ItemGroup>
+
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>
+
+
